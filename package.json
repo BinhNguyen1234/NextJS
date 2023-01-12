@@ -21,10 +21,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/serve-static": "^3.0.0",
     "@types/mongoose": "^5.11.97",
+    "class-validator": "^0.14.0",
     "dotenv": "^16.0.3",
     "mongoose": "^6.8.3",
     "reflect-metadata": "^0.1.13",

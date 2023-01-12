@@ -1,6 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 import { BinhService } from '../service';
-@Controller('info')
+@Controller({
+  path: "binh",
+  version: ["1"]
+})
 export class BinhController {
   constructor(private binhService: BinhService) {}
   @Get('name')
