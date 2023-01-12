@@ -1,10 +1,17 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './controller';
-import { AppHelloService } from './service/app.service';
+import { BinhModule } from './BinhUser';
+import { RouterModule } from '@nestjs/core';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
+import { join } from 'path';
+const AllModule = [BinhModule];
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppHelloService],
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'Vue'),
+    }),
+    RouterModule.register([{ path: 'binh', module: BinhModule }]),
+    ...AllModule,
+  ],
 })
 export class AppModule {}
