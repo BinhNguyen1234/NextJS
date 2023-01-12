@@ -1,7 +1,7 @@
 # compiled output
 /dist
 /node_modules
-
+/vue
 # Logs
 logs
 *.log
@@ -10,13 +10,14 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-/Vue
 # OS
 .DS_Store
+#ignore
 
 # Tests
 /coverage
 /.nyc_output
+#ignore
 
 # IDEs and editors
 /.idea
