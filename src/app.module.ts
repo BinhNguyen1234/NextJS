@@ -1,4 +1,4 @@
-import { Module} from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { BinhModule } from './BinhUser';
 import { RouterModule } from '@nestjs/core';
 import { ServeStaticModule } from '@nestjs/serve-static';
@@ -14,11 +14,16 @@ const AllModule = [BinhModule, MongooseModule, TestModule, AuthModule];
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'Vue'),
     }),
-    RouterModule.register([{
-      path: 'user', module: BinhModule 
-    },{
-      path: "auth", module: AuthModule
-    }]),
+    RouterModule.register([
+      {
+        path: 'user',
+        module: BinhModule,
+      },
+      {
+        path: 'auth',
+        module: AuthModule,
+      },
+    ]),
     ...AllModule,
   ],
 })

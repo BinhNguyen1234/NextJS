@@ -1,8 +1,7 @@
-import { Module } from "@nestjs/common";
-import { MongooseService } from "./service/mongoose.service";
+import { Module } from '@nestjs/common';
+import { MongooseService } from './service/mongoose.service';
 @Module({
-    providers: [MongooseService],
-    exports: [MongooseService]
+  providers: [MongooseService],
+  exports: [MongooseService],
 })
-export class MongooseModule {
-}
+export class MongooseModule {}

@@ -1,11 +1,11 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get } from '@nestjs/common';
 @Controller({
-    path: "logout",
-    version: "1"
+  path: 'logout',
+  version: '1',
 })
-export class LogoutController{
-    @Get()
-    checkroute(){
-        return "signup"
-    }
+export class LogoutController {
+  @Get()
+  checkroute() {
+    return 'signup';
+  }
 }
