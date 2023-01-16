@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
-const postSchema = new mongoose.Schema({
+import { IPost } from './interface/post.interface';
+const postSchema = new mongoose.Schema<IPost>({
   author: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'User',
@@ -7,7 +8,7 @@ const postSchema = new mongoose.Schema({
   title: {
     type: String,
     require: true,
-    unique: true,
+    index: true,
   },
   content: {
     type: String,
@@ -16,7 +17,7 @@ const postSchema = new mongoose.Schema({
   url: {
     type: String,
     require: true,
-    unique: true,
+    index: true,
   },
   contentString: {
     type: String,

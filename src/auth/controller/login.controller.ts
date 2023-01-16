@@ -4,7 +4,6 @@ import {
   Post,
   UsePipes,
   ValidationPipe,
-  CustomDecorator,
 } from '@nestjs/common';
 import { UserInfo } from '../dto/info-login.dto';
 import { AuthService } from '../service/auth.service';

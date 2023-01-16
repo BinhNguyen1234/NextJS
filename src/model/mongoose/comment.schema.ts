@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
-const commentSchema = new mongoose.Schema({
+import { IComment } from './interface/comment.interface';
+const commentSchema = new mongoose.Schema<IComment>({
   atPost: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Post',
