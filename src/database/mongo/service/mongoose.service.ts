@@ -41,7 +41,9 @@ export class MongooseService {
   }
   async connect() {
     mongoose
-      .connect(process.env.MONGODB_URI, { dbName: process.env.MONGODB_DBNAME })
+      .connect(process.env.MONGODB_URI, {
+        dbName: process.env.MONGODB_DBNAME,
+      })
       .catch((e) => [console.log('cannot not estashblished connect')]);
   }
   async close() {

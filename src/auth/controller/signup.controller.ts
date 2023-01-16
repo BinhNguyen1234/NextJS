@@ -1,5 +1,6 @@
 import { Controller, Post, Res, Req } from '@nestjs/common';
 import { AuthService } from '../service/auth.service';
+import { UsePipes, ValidationPipe } from '@nestjs/common';
 @Controller({
   path: 'signup',
   version: '1',
