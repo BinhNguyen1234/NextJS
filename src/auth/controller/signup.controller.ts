@@ -1,19 +1,21 @@
-import { Controller, Post, Res, Req } from '@nestjs/common';
+import { Controller, Post, Res, Req, Body } from '@nestjs/common';
+import { UserInfo } from '../dto/info-login.dto';
 import { AuthService } from '../service/auth.service';
 import { UsePipes, ValidationPipe } from '@nestjs/common';
+import { Response } from 'express';
+
 @Controller({
   path: 'signup',
   version: '1',
 })
 export class SignUpController {
-  private authService: AuthService;
-  constructor(Service: AuthService) {
-    this.authService = Service;
+  constructor(private authService: AuthService) {
   }
   @Post()
-  async handleSignUp(@Req() req, @Res() res) {
+  @UsePipes(ValidationPipe)
+  async handleSignUp(@Res() res: Response, @Body() Info: UserInfo) {
     return this.authService
-      .SignUp(req.body)
+      .SignUp(Info)
       .then(() => {
         return res.status(201).send('ok');
       })

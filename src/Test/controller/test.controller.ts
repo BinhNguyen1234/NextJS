@@ -1,9 +1,9 @@
 import { Get, Controller } from '@nestjs/common';
-import { MongooseService } from 'src/database/mongo/service/mongoose.service';
+import { MongooseConnection } from 'src/database/mongo/mongoose.connection';
 @Controller('test')
 export class TestController {
   private DbService;
-  constructor(dbService: MongooseService) {
+  constructor(dbService: MongooseConnection) {
     this.DbService = dbService;
   }
   @Get('check')

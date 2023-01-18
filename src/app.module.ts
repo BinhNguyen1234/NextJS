@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, OnApplicationBootstrap } from '@nestjs/common';
 import { BinhModule } from './BinhUser';
 import { RouterModule } from '@nestjs/core';
 import { ServeStaticModule } from '@nestjs/serve-static';
@@ -27,4 +27,8 @@ const AllModule = [BinhModule, MongooseModule, TestModule, AuthModule];
     ...AllModule,
   ],
 })
-export class AppModule {}
+export class AppModule implements OnApplicationBootstrap {
+  async onApplicationBootstrap() {
+    console.log('app running');
+  }
+}

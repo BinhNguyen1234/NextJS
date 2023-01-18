@@ -10,4 +10,7 @@ export class BinhService {
   printHabbit() {
     return 'Habit: Coding';
   }
+  constructor(){
+    console.log("123456")
+  }
 }

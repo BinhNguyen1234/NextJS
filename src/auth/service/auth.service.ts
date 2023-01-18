@@ -13,7 +13,7 @@ export class AuthService {
       .then((result) => {
         return result;
       })
-      .catch((e) => {
+      .catch((e:Error) => {
         console.log(e.message);
         throw e;
       });

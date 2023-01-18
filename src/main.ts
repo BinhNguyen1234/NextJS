@@ -10,6 +10,7 @@ async function bootstrap() {
   app.enableVersioning({
     type: VersioningType.URI,
   });
+  app.enableShutdownHooks();
   await app.listen(PORT, () => {
     console.log('Application running at ', PORT);
   });

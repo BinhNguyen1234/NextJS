@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { MongooseService } from './service/mongoose.service';
+import { MongooseConnection } from './mongoose.connection';
 @Module({
-  providers: [MongooseService],
-  exports: [MongooseService],
+  providers: [MongooseConnection],
+  exports: [MongooseConnection],
 })
 export class MongooseModule {}

@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import { Injectable, Scope } from '@nestjs/common';
 @Injectable({ scope: Scope.DEFAULT })
-export class MongooseService {
+export class MongooseConnection {
   connection = mongoose.connection;
   constructor() {
     mongoose.connect(process.env.MONGODB_URI, {

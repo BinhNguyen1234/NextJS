@@ -1,14 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { BinhService } from '../service';
+import { TestService } from '../service/test.service';
 @Controller({
   path: 'binh',
   version: ['1'],
 })
 export class BinhController {
-  constructor(private binhService: BinhService) {}
+  constructor(@Inject("BINH_SERVICE")private binhService: BinhService) {}
   @Get('name')
   returnName() {
-    return this.binhService.printName();
+    return this.binhService.printName()
   }
   @Get('age')
   returnAge() {
@@ -16,6 +17,6 @@ export class BinhController {
   }
   @Get('habit')
   returnHabit() {
-    return this.binhService.printHabbit;
+    return this.binhService.printHabbit();
   }
 }
